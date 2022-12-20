@@ -36,9 +36,11 @@ class TestAppState extends State<TestApp> {
   ];
   int i = 0;
   void answer() {
-    setState(() {
-      i++;
-    });
+    if (i < questions.length - 1) {
+      setState(() {
+        i++;
+      });
+    }
   }
 
   @override
