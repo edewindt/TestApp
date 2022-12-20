@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(TestApp());
 
-class TestApp extends StatelessWidget {
+class TestApp extends StatefulWidget {
+  const TestApp({super.key});
+
+  @override
+  State<TestApp> createState() => TestAppState();
+}
+
+class TestAppState extends State<TestApp> {
   final List<Map> questions = const [
     {
       'question': 'What is your age range?',
@@ -26,11 +33,10 @@ class TestApp extends StatelessWidget {
       'answers': ['Yes', 'No']
     }
   ];
+  int i = 0;
   void answer() {
     print('Answer!');
   }
-
-  const TestApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +48,7 @@ class TestApp extends StatelessWidget {
           title: Text('Test App'),
         ),
         body: Column(children: [
-          Text('The questions'),
+          Text(questions[i]['question'] as String),
           ElevatedButton(onPressed: answer, child: Text('Answer'))
         ]),
       ),
