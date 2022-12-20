@@ -26,6 +26,10 @@ class TestApp extends StatelessWidget {
       'answers': ['Yes', 'No']
     }
   ];
+  void answer() {
+    print('Answer!');
+  }
+
   const TestApp({super.key});
 
   @override
@@ -37,7 +41,7 @@ class TestApp extends StatelessWidget {
         ),
         body: Column(children: [
           Text('The questions'),
-          ElevatedButton(onPressed: (() {}), child: Text('Answer'))
+          ElevatedButton(onPressed: answer, child: Text('Answer'))
         ]),
       ),
     );
