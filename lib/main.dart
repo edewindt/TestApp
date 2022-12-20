@@ -36,10 +36,10 @@ class TestAppState extends State<TestApp> {
     }
   ];
   int _i = 0;
-  void answer() {
+  void answer(int n) {
     if (_i < questions.length - 1) {
       setState(() {
-        _i++;
+        _i = _i + n;
       });
     }
   }

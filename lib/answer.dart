@@ -13,7 +13,7 @@ class Answer extends StatelessWidget {
       margin: EdgeInsets.all(15),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-        onPressed: (() => handle()),
+        onPressed: (() => handle(1)),
         child: Text('$order. $answer'),
       ),
     );
