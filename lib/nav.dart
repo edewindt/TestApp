@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Nav extends StatelessWidget {
-  const Nav({super.key});
+  final Function handle;
+  const Nav({required this.handle, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      children: [
+        TextButton(onPressed: (() => handle(-1)), child: Text('Back')),
+        TextButton(onPressed: (() => handle(1)), child: Text('Next'))
+      ],
+    );
   }
 }

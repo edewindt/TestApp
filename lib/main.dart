@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './question.dart';
 import './answer.dart';
+import './nav.dart';
 
 void main() => runApp(TestApp());
 
@@ -60,7 +61,8 @@ class TestAppState extends State<TestApp> {
               for (var i = 0; i < questions[_i]['answers'].length; i++)
                 Answer(i + 1, questions[_i]['answers'][i], answer)
             ],
-          )
+          ),
+          Nav(handle: answer)
         ]),
       ),
     );
