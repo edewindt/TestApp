@@ -9,9 +9,14 @@ class TestApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-        title: Text('Test App'),
-      )),
+        appBar: AppBar(
+          title: Text('Test App'),
+        ),
+        body: Column(children: [
+          Text('The questions'),
+          ElevatedButton(onPressed: (() {}), child: Text('Answer'))
+        ]),
+      ),
     );
   }
 }
