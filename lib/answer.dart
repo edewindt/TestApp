@@ -9,7 +9,7 @@ class Answer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ElevatedButton(
-        onPressed: (() => handle),
+        onPressed: (() => handle()),
         child: Text(answer),
       ),
     );
