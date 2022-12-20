@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
   final String answer;
-  const Answer(this.answer, {super.key});
+  final Function handle;
+  const Answer(this.answer, this.handle, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(answer),
+      child: ElevatedButton(
+        onPressed: (() => handle),
+        child: Text(answer),
+      ),
     );
   }
 }

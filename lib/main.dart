@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 void main() => runApp(TestApp());
 
@@ -34,11 +35,11 @@ class TestAppState extends State<TestApp> {
       'answers': ['Yes', 'No']
     }
   ];
-  int i = 0;
+  int _i = 0;
   void answer() {
-    if (i < questions.length - 1) {
+    if (_i < questions.length - 1) {
       setState(() {
-        i++;
+        _i++;
       });
     }
   }
@@ -53,8 +54,13 @@ class TestAppState extends State<TestApp> {
           title: Text('Test App'),
         ),
         body: Column(children: [
-          Question(questions[i]['question'] as String),
-          ElevatedButton(onPressed: answer, child: Text('Answer'))
+          Question(questions[_i]['question'] as String),
+          Column(
+            children: [
+              for (var i = 0; i < questions[_i]['answers'].length; i++)
+                Answer(questions[_i]['answers'][i], () => answer)
+            ],
+          )
         ]),
       ),
     );
