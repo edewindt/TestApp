@@ -37,6 +37,8 @@ class TestApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.black,
           title: Text('Test App'),
         ),
         body: Column(children: [
