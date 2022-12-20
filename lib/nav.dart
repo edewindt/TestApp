@@ -7,9 +7,27 @@ class Nav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TextButton(onPressed: (() => handle(-1)), child: Text('Back')),
-        TextButton(onPressed: (() => handle(1)), child: Text('Next'))
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          child: TextButton(
+            onPressed: (() => handle(-1)),
+            style: TextButton.styleFrom(backgroundColor: Colors.black),
+            child: const Text('Back', style: TextStyle(color: Colors.white)),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          child: TextButton(
+            onPressed: (() => handle(1)),
+            style: TextButton.styleFrom(backgroundColor: Colors.black),
+            child: const Text(
+              'Next',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        )
       ],
     );
   }
