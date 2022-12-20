@@ -3,7 +3,7 @@ import './question.dart';
 import './answer.dart';
 import './nav.dart';
 
-void main() => runApp(TestApp());
+void main() => runApp(const TestApp());
 
 class TestApp extends StatefulWidget {
   const TestApp({super.key});
@@ -49,6 +49,13 @@ class TestAppState extends State<TestApp> {
     }
   }
 
+  void change(String n) {
+    setState(() {
+      chosen[_i] = n;
+    });
+  }
+
+  List<String> chosen = ['0', '0', '0', '0'];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,17 +63,22 @@ class TestAppState extends State<TestApp> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.black,
-          title: Text('Test App'),
+          title: const Text('Test App'),
         ),
         body: Column(children: [
           Question(questions[_i]['question'] as String),
           Column(
             children: [
               for (var i = 0; i < questions[_i]['answers'].length; i++)
-                Answer(i + 1, questions[_i]['answers'][i], answer)
+                Answer(i + 1, questions[_i]['answers'][i], change)
             ],
           ),
-          Nav(handle: answer)
+          Nav(handle: answer),
+          if (chosen[_i] != '0')
+            Text(
+              chosen[_i],
+              style: TextStyle(fontSize: 20),
+            )
         ]),
       ),
     );

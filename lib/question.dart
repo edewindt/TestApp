@@ -8,10 +8,10 @@ class Question extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-      padding: EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Text(
         question,
-        style: TextStyle(fontSize: 20),
+        style: const TextStyle(fontSize: 20),
         textAlign: TextAlign.center,
       ),
     ));

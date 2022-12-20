@@ -10,7 +10,7 @@ class Nav extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: TextButton(
             onPressed: (() => handle(-1)),
             style: TextButton.styleFrom(backgroundColor: Colors.black),
@@ -18,7 +18,7 @@ class Nav extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: TextButton(
             onPressed: (() => handle(1)),
             style: TextButton.styleFrom(backgroundColor: Colors.black),
