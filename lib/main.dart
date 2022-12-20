@@ -58,7 +58,7 @@ class TestAppState extends State<TestApp> {
           Column(
             children: [
               for (var i = 0; i < questions[_i]['answers'].length; i++)
-                Answer(questions[_i]['answers'][i], answer)
+                Answer(i + 1, questions[_i]['answers'][i], answer)
             ],
           )
         ]),

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   final String answer;
   final Function handle;
-  const Answer(this.answer, this.handle, {super.key});
+  final int order;
+  const Answer(this.order, this.answer, this.handle, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class Answer extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
         onPressed: (() => handle()),
-        child: Text(answer),
+        child: Text('$order. $answer'),
       ),
     );
   }
