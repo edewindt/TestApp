@@ -36,7 +36,9 @@ class TestAppState extends State<TestApp> {
   ];
   int i = 0;
   void answer() {
-    print('Answer!');
+    setState(() {
+      i++;
+    });
   }
 
   @override
