@@ -8,7 +8,16 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text(question), Text(answer)],
+      children: [
+        Text(
+          question,
+          style: TextStyle(fontSize: 20),
+        ),
+        Text(
+          answer,
+          style: TextStyle(fontSize: 20, color: Colors.red),
+        )
+      ],
     );
   }
 }
