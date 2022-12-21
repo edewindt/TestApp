@@ -11,11 +11,11 @@ class Result extends StatelessWidget {
       children: [
         Text(
           question,
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
         ),
         Text(
           answer,
-          style: TextStyle(fontSize: 20, color: Colors.red),
+          style: const TextStyle(fontSize: 20, color: Colors.red),
         )
       ],
     );

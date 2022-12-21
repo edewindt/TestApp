@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/result.dart';
 import './quiz.dart';
+import './lastly.dart';
 
 void main() => runApp(const TestApp());
 
@@ -54,6 +55,12 @@ class TestAppState extends State<TestApp> {
     });
   }
 
+  void reset() {
+    setState(() {
+      _i = 0;
+    });
+  }
+
   List<String> chosen = ['0', '0', '0', '0'];
   @override
   Widget build(BuildContext context) {
@@ -76,6 +83,8 @@ class TestAppState extends State<TestApp> {
                   children: [
                     for (var i = 0; i < questions.length; i++)
                       Result(questions[i]['question'] as String, chosen[i]),
+                    Lastly(chosen),
+                    TextButton(onPressed: reset, child: Text('Reset'))
                   ],
                 ),
               ),

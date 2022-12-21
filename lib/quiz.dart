@@ -34,7 +34,7 @@ class Quiz extends StatelessWidget {
       if (chosen[ii] != '0')
         Text(
           chosen[ii],
-          style: const TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20, color: Colors.purple),
         )
     ]);
   }
