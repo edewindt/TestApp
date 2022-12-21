@@ -40,7 +40,7 @@ class Lastly extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'You are $age, $income, and $innocence',
-      style: TextStyle(fontSize: 20, color: Colors.purple),
+      style: const TextStyle(fontSize: 20, color: Colors.purple),
     );
   }
 }

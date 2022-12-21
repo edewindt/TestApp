@@ -84,7 +84,18 @@ class TestAppState extends State<TestApp> {
                     for (var i = 0; i < questions.length; i++)
                       Result(questions[i]['question'] as String, chosen[i]),
                     Lastly(chosen),
-                    TextButton(onPressed: reset, child: Text('Reset'))
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 20),
+                      child: TextButton(
+                          style: TextButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              padding: EdgeInsets.all(15)),
+                          onPressed: reset,
+                          child: const Text(
+                            'Reset',
+                            style: TextStyle(color: Colors.white),
+                          )),
+                    )
                   ],
                 ),
               ),
