@@ -32,7 +32,7 @@ class Lastly extends StatelessWidget {
     if (results[2] == 'Yes') {
       return 'innocent';
     } else {
-      return 'liar';
+      return 'a liar';
     }
   }
 
