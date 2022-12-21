@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/result.dart';
 import './quiz.dart';
 
 void main() => runApp(const TestApp());
@@ -70,8 +71,13 @@ class TestAppState extends State<TestApp> {
                 change: change,
                 answer: answer,
                 chosen: chosen)
-            : const Center(
-                child: Text('The End'),
+            : Center(
+                child: Column(
+                  children: [
+                    for (var i = 0; i < questions.length; i++)
+                      Result(questions[i]['question'] as String, chosen[i]),
+                  ],
+                ),
               ),
       ),
     );
