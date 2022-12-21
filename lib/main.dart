@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
-import './nav.dart';
+import './quiz.dart';
 
 void main() => runApp(const TestApp());
 
@@ -13,7 +11,7 @@ class TestApp extends StatefulWidget {
 }
 
 class TestAppState extends State<TestApp> {
-  final List<Map> questions = const [
+  final List<Map<String, Object>> questions = const [
     {
       'question': 'What is your age range?',
       'answers': ['0 - 13', '13 - 18', '21 - 49', '50+']
@@ -66,22 +64,13 @@ class TestAppState extends State<TestApp> {
           title: const Text('Test App'),
         ),
         body: _i < questions.length
-            ? Column(children: [
-                Question(questions[_i]['question'] as String),
-                Column(
-                  children: [
-                    for (var i = 0; i < questions[_i]['answers'].length; i++)
-                      Answer(i + 1, questions[_i]['answers'][i], change)
-                  ],
-                ),
-                Nav(handle: answer),
-                if (chosen[_i] != '0')
-                  Text(
-                    chosen[_i],
-                    style: const TextStyle(fontSize: 20),
-                  )
-              ])
-            : Center(
+            ? Quiz(
+                questions: questions,
+                ii: _i,
+                change: change,
+                answer: answer,
+                chosen: chosen)
+            : const Center(
                 child: Text('The End'),
               ),
       ),

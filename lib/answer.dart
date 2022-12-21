@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   final String answer;
   final Function change;
-  final int order;
-  const Answer(this.order, this.answer, this.change, {super.key});
+  const Answer(this.answer, this.change, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class Answer extends StatelessWidget {
         onPressed: (() {
           change(answer);
         }),
-        child: Text('$order. $answer'),
+        child: Text(answer),
       ),
     );
   }
